@@ -1,22 +1,27 @@
-void setup() {
+void setup(){
+  size(800,600);
   background(0);
-  size(800, 600);
-}
-void drawarandomcircle() {
-  fill(random(255), 0, random(255), 100);
-  float sz = random(5, 50);
-  ellipse(random(width), random(height), sz, sz);
-}
-void drawacircleat(int x, int y) {
-  fill(255, 200, 255, 100);
-  float sz = random(5, 25);
-    ellipse(x, y, sz, sz);
+  noStroke();
 }
 
+void square(){
+  fill(0,0,255);
+  rect(width/2-150,height/2-150,300,300);
+}
 
-  void draw() {
-    drawarandomcircle();
-    if (mousePressed) {
-      drawacircleat(mouseX, mouseY);
-    }
-  }
+void circle(int r,int g, int b){
+  fill(r,g,b);
+  ellipse(mouseX,mouseY,50,50);
+}
+
+void einsteins(){
+  PImage le;
+  le= loadImage("littleeinsteins.jpg");
+  image(le,width/2-100,height/2-100);
+}
+
+void draw(){
+  square();
+  circle(255,80,187);
+  einsteins();
+}
